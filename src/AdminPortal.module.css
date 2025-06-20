@@ -1,0 +1,154 @@
+.Page {
+    height:100vh;
+    width:100vw;
+    background-color:white;
+    display: flex;
+    flex-direction: row;
+}
+.SideNav{
+    height:100%;
+    width:18%;
+    background-color:#0040FF ;
+    min-height: 100vh;
+    position:fixed;
+}
+.RestPage{
+ 
+    margin-top:70px;
+}
+.NavBar{
+    height:8%;
+    background-color:#E6EEFF;
+    position:fixed;
+    min-height:70px;
+    z-index: 2;
+}
+
+
+.ProfilePicture{
+  height:12vw;
+  width: 12vw;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left:2.25vw;
+  margin-top:3vw;
+}
+.HR{
+  color: white;  
+  margin-top:4%;  
+  margin-left:7%;
+  margin-right:7%;  
+}
+.UserName{
+  color: white;
+  font-size: large;  
+  text-align: center;
+
+}
+.NavItem{
+ height: 6vh;
+ color: white;
+ padding-left: 15%;
+ padding-top: 9%;
+}
+.NavItem:hover{
+cursor:pointer;    
+background-color: #E6EEFF;
+color:rgba(0,0,0,0.5);
+}
+.NavItemGroup{   
+ margin-top:30%;   
+
+}
+.SelectedNavItem{
+    background-color: #00FF00;
+    height: 6vh;
+    color:rgba(0,0,0,0.5);
+    padding-left: 15%;
+    padding-top: 6%;
+}
+
+.MenuIcon{
+    opacity: 60%;
+    float: left;
+    margin-top:5%;
+    margin-left:7%;
+    text-decoration: none;    
+
+}
+
+@media only screen and (min-width: 768px) {
+    .Logout{
+        opacity: 60%;
+        float: right;
+        margin-top:1.5%;
+        margin-right:7%;
+        text-decoration: none;
+    }
+
+    .Logout:hover{
+        float: right;
+        margin-top:1.5%;
+        margin-right:7%;
+        text-decoration: underline; 
+        cursor: pointer;
+    }
+    .NavBar{
+        margin-left: 18%; 
+        width: 82%;
+    }
+    .RestPage{
+      margin-left: 18%; 
+      width: 82%;
+    }
+ }
+ @media only screen and (max-width: 768px) {
+    .RestPage{
+        width: 100%;
+    }
+    .Logout{
+        opacity: 60%;
+        float: right;
+        margin-top:5%;
+        margin-right:7%;
+        text-decoration: none;
+    }
+    .Logout:hover{
+        float: right;
+        margin-top:5%;
+        margin-right:7%;
+        text-decoration: underline; 
+        cursor: pointer;
+    }
+    .NavBar{
+        width: 100%;
+    }
+
+  }
+
+  .MobileNav{
+    position: fixed;
+    z-index:2;
+    background-color:#0040FF ;
+    width:100%;
+  }
+
+  .Popup{
+    background-color:rgba(255, 204, 204);
+    position: fixed;  
+    margin-top: 3%;
+    margin-left: 3%;
+    padding-left:3%;
+    padding-right:3%;
+    padding-top:1.3%;
+    padding-bottom:1%;
+    border-radius: 25px;  
+    text-align: left;
+    color: rgb(153, 0, 0);
+    width:400px;
+    height:30px;
+    font-size: large;
+    font-weight: bold;
+    display: none;
+  }

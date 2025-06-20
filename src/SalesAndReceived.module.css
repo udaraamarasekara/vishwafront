@@ -1,0 +1,241 @@
+.SelectionsContainer{
+    margin-top: 2%;
+    margin-left:7%;
+    margin-right:7%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 86%;
+}
+
+
+
+.Pack{
+   display: flex;
+   width: 100%; 
+}
+
+.Button{
+  background-color:#F55733 ;
+  color: white;
+  border:2px solid #E03F34;
+  width:6%;
+  min-width:30px;
+  padding-top:0.7%;
+  padding-bottom:0.7%;
+  margin-left: 2%;
+  margin-right: 2%;
+ }
+ 
+.ButtonsContainer{
+  display:flex;
+  flex-direction: row;
+  margin: 3%;
+  justify-content: center;
+}
+
+ .Button:hover{
+   cursor: pointer;
+ }
+
+.TableContainer{
+  overflow-x: auto;
+}
+
+.TableStyle{
+  table-layout: fixed;
+  width: 94%;
+  margin: 3%;
+  min-width:1000px ;
+
+}
+
+.TableHeader{
+  color: white;  
+  background-color:#0040FF ;
+
+}
+.TableRow:nth-child(even) {background-color: #E6EEFF;}
+.TableRow{
+min-height:165px;
+}
+.Input{
+    background-color:#E6EEFF;
+    font-size: large;
+    color: rgba(0,0,0,0.5);
+    width:87%;
+    margin-left:7%;
+    height:6vh;
+    margin-top: 4%;
+    border-radius:5px;
+    outline:none;
+    border: none;
+    padding-right:3%;
+    padding-left:3%;
+    min-height: 35px;
+  }
+
+  .DataCell{
+    text-align: center;
+    overflow-x: auto;
+
+  }
+
+  .DataCellFlex{
+    text-align: center;
+    overflow-x: auto;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    min-height:max-content;
+  }
+
+  .Popup{
+    background-color:rgba(255, 204, 204);
+    position: fixed;  
+    margin-top: 3%;
+    margin-left: 3%;
+    padding-left:3%;
+    padding-right:3%;
+    padding-top:1.3%;
+    padding-bottom:1%;
+    border-radius: 25px;  
+    text-align: left;
+    color: rgb(153, 0, 0);
+    width:400px;
+    height:30px;
+    font-size: large;
+    font-weight: bold;
+    display: none;
+    z-index: 2;
+  }
+  .KeepSpace{
+    height:6vh;
+  
+  }
+  .PopupTwo{
+    background-color:rgb(152, 255, 152);
+    position: fixed;  
+    margin-top: 3%;
+    margin-left: 3%;
+    padding-left:3%;
+    padding-right:3%;
+    padding-top:1.3%;
+    padding-bottom:1%;
+    border-radius: 25px;  
+    text-align: left;
+    color: #0B4937;
+    width:400px;
+    height:30px;
+    font-size: large;
+    font-weight: bold;
+    display: none;
+  }
+@media only screen and (max-width: 768px) {
+  .Pack{
+    flex-direction: column;
+ }
+ .SelectionsContainer{
+  flex-direction: column;
+ }
+ .OneThird{
+  width: 100%;
+}
+.lbl{
+  align-self: left;  
+  margin-left:7%;
+}
+.SearchButton{
+  background-color:#008000;
+  color:white;
+  width:93%;
+  height: 45px;
+  border: none;
+  position: relative;
+  margin-right:0;
+  margin-left: 7%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+
+}
+}
+
+@media only screen and (min-width: 768px) {
+  .Pack{
+    flex-direction: row;
+ }
+ .lbl{
+  align-self: center;  
+  width: 20%;
+}
+.InputWrapper{
+  width:80% ;
+}
+ .SelectionsContainer{
+  flex-direction: row;
+ }
+ .OneThird{
+  width: 19%;
+}
+.SearchButtonContainer{
+  width:3%;
+  margin-top: 1%;
+}
+.Parent{
+  width: 82%;
+
+}
+
+.SearchButton{
+  background-color:#008000;
+  color:white;
+  width:100%;
+  height: 45px;
+  border: none;
+  position: relative;
+  margin-right:0;
+  padding-right:3%;
+  padding-left:3%;
+}
+}
+
+.CheckedBox{
+ min-width:280px; 
+ position: relative;
+ display: flex;
+ margin-left: 7%;
+}
+
+
+
+.SearchButton:hover{
+  cursor: pointer;
+}
+.ErrorLbl{
+  color: red;
+  text-align: right;
+  width: 100%;
+  float: right;
+  margin-right:7%;
+
+}
+
+.NoData{
+  width: 80%;
+  margin: 10%;
+  float: center;
+}
+
+.Red{
+  color: red;
+}
+.Yellow{
+  color:yellow;
+
+}
+.Red:hover{
+  cursor: pointer;
+}
+.Yellow:hover{
+  cursor: pointer;
+}

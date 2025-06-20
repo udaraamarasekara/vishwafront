@@ -1,0 +1,27 @@
+.RadioButton{
+  background-color: #D9D9D9;  
+  width:1.5vw;
+  height:1.5vw;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+.ActiveRadioButton{
+  position:absolute;  
+  top:0.25vw;
+  left:0.25vw;
+  background-color: #F55733;  
+  width:1vw;
+  height:1vw;
+  border-radius: 50%;
+}
+.RadioButtonContainer{
+  display:flex;
+  flex-direction: row;     
+}
+.Label{
+  text-align: center;  
+  font-size: large; 
+  margin-left: 1%; 
+}

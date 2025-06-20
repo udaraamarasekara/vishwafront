@@ -1,0 +1,59 @@
+.Input{
+    background-color:#E6EEFF;
+    font-size: large;
+    color: rgba(0,0,0,0.5);
+    width:80%;
+    margin-left:7%;
+    margin-right:7%;
+    height:6vh;
+    margin-top: 4%;
+    border-radius:5px;
+    outline:none;
+    border: none;
+    padding-right:3%;
+    padding-left:3%;
+    min-height: 35px;
+  }
+
+  .SuggessionArea{
+    background-color:white;
+    font-size: large;
+    color: black;
+    margin-left:7%;
+    margin-right:7%;
+    height:auto;
+    max-height: 500px;
+    overflow-y: auto;
+    outline:none;
+    border: none;
+    z-index:2;
+    position: absolute;
+    width:86%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+  }
+
+  .SuggesionItem{
+   padding-top: 1%;
+   padding-bottom: 1%;
+   padding-right:3%;
+   padding-left:3%; 
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   cursor: pointer;
+  }
+  
+  .SuggesionItem:hover{
+  background-color: antiquewhite; 
+  }
+  .Parent{
+    position: relative;
+    width: 100%;
+  }
+
+  .SingleDivSuggession{
+    margin-left: 3%;
+    margin-right: 3%;
+  
+  }

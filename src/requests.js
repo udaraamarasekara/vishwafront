@@ -226,7 +226,14 @@ export const newGrn=async(data)=>{
   let response;
   if(sessionStorage.getItem('role')==='admin'||  JSON.parse(sessionStorage.getItem('ability')).find((obj => obj.table === 'good' && obj.method === 'create')))
   {
-   await  Api.post('api/newGrn',data).then((res)=>{
+   await  Api.post('api/newGrn',data,
+
+    {
+    headers: {
+      'Content-Type': 'multipart/form-data', // Only set here for this request
+    },
+  }
+   ).then((res)=>{
     res.status===500 ? response={error:res.data}:
     response=true;
    }).catch((error)=> {

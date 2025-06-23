@@ -6,7 +6,8 @@ export default axios.create({
 
     headers:{
       'X-Requested-With':'XMLHttpRequest',
-      'Accept':'Application/json'
+      'Accept':'Application/json',
+
     },
     withCredentials: true,
   });

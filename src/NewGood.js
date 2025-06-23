@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleRight,faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
 import CustomSelect from "./CustomSelect";
 import Api from "./Api";
+import CameraUpload from "./FileInput";
 function NewGood(){
   const projects=useRef(useLoaderData());
   const [itemCode,setItemCode] =useState();
@@ -29,6 +30,7 @@ function NewGood(){
   const [project,setProject]=useState();
   const popupToggle=useRef();
   const popupTwoToggle=useRef();
+  const [img,setImg]=useState();
 
   const [data,setData]=useState(0);
   let resp=false;
@@ -89,6 +91,7 @@ function NewGood(){
     setQuantity('')
     setSalePricePerUnit('')
     setTot('')
+    setImg(null)
     setItems([])
     setPaginatedItems([])
    }
@@ -174,6 +177,7 @@ function NewGood(){
           quantity:quantity,
           sale_price_per_unit:salePricePerUnit,
           stock_number:stockNumber,
+          img:img,
           job_number:'-1'
         };
         setItems(items => [...items,newValue]);
@@ -225,7 +229,7 @@ return(
               <input type="text" step="1" min="0" className={styles.Input} placeholder="stock Number" onChange={(e)=>setStockNumber(e.target.value)}  value={stockNumber || ''}/>
               </div>:
               <div className={styles.Grid} >
-
+                
                 <AutocompleteSearch key={'description'} url={'newGoodSearch/description'} placeholderValue="Part Name" value={description}   setValue={(e)=>setDescription(e.target.value)} elementClick={(e)=>{setDescription(e.description)}}/>
                 <input type="number" step="1" min="0" className={styles.Input} placeholder="Quantity" onChange={(e)=>setQuantity(e.target.value)} value={quantity||''}/>
               </div>
@@ -234,11 +238,10 @@ return(
               <input type="number" step="1" min="0" className={styles.Input} placeholder="Quantity" onChange={(e)=>setQuantity(e.target.value)} value={quantity||''}/>
               <input type="number" step="any" min="0" className={styles.Input} onChange={(e)=>setSalePricePerUnit(e.target.value)} placeholder="Sale price per unit" value={salePricePerUnit||''}/>
               <AutocompleteSearch key={'unit'}  url={'newGoodSearch/unit'} placeholderValue="Location" setValue={(e)=>setUnit(e.target.value)}  value={unit}  elementClick={(e)=>setUnit(e.unit)}/>
-             {/* { topic==='New Sale' &&  <div  >                
-                      <CustomSelect setCurrentVal={setProject} optionData={data|| null}/>
-                      <div className={styles.KeepSpace}></div>
+             { topic!=='New Sale' &&  <div  >                
+                      <CameraUpload upload={(file)=>{setImg(file)}}/>
 
-                  </div>  } */}
+                  </div>  }
          </div>
             }
             <div className={styles.ButtonsArea}>

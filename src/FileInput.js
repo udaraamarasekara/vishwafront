@@ -28,7 +28,7 @@ export default function CameraUpload({ upload }) {
           <img
             src={previewUrl}
             alt="Preview"
-            className="w-64 h-64 object-cover border"
+            style={{height:'500px', marginTop:'3%', marginInline:"auto", width:'auto',objectFit:'cover'}}
           />
         </div>
       )}

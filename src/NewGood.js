@@ -40,7 +40,6 @@ function NewGood(){
         
     Array.isArray(projects.current.data) && projects.current.data.length!=='0' &&
       setData(projects.current.data.map((element)=>{ return element.name}));
-     setProject(projects.current.data[0]?.name || null);
     setTopic('New Sale');};
   },[location])
 
@@ -152,7 +151,7 @@ function NewGood(){
 
      }
     
-  }).catch((e)=>{alert(e)
+  }).catch((e)=>{
    localStorage.getItem('auth') && localStorage.removeItem('auth');
    nav('/login');
   })

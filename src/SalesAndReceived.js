@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDoubleRight,faAngleDoubleLeft,faTrash,faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDoubleRight,faAngleDoubleLeft,faTrash,faEdit, faCamera } from '@fortawesome/free-solid-svg-icons';
 import styles from "./SalesAndReceived.module.css";
 import CustomSelect from "./CustomSelect";
 import React,{ useRef, useState} from "react";
@@ -10,7 +10,7 @@ import CheckedBox from './CheckedBox';
 import axios from 'axios';
 import PopUpOne from './PopUpOne';
 import Url from './Url';
-
+import PopUpImg from './PopUpImg'
 function SalesAndReceived(){
   
   let allData=useRef(useLoaderData());
@@ -29,6 +29,8 @@ function SalesAndReceived(){
   let k=0;
   let url;
   const [popUp,setPopUp]=useState(false);
+  const [popUpImg,setPopUpImg]=useState(false);
+  const [img,setImg]=useState(false);
   const id=useRef();
   async function downloadDocument() {
     axios({
@@ -66,7 +68,6 @@ function SalesAndReceived(){
       setToState(false);
     }
   }
-
 const download=()=>{
       if(search.current==='allGoods')
       {
@@ -219,6 +220,8 @@ const confirmDelete=async()=>{
   return(
   <div>
     {popUp && <PopUpOne cancel={()=>setPopUp(false)} confirm={confirmDelete}/>}
+    {popUpImg && <PopUpImg setView={()=>setPopUpImg(false)} img ={img}/>}
+
      <div className={styles.SelectionsContainer}>
         <div className={styles.OneThird}>
           <div className={styles.CheckedBox}>
@@ -278,7 +281,7 @@ const confirmDelete=async()=>{
             <thead>
             <tr>
              {
-              Object.keys(data[0]).filter((key)=>{return key!=='id'}).map((key)=>{
+              Object.keys(data[0]).filter((key)=>{return key!=='id'  && key !=='img'}).map((key)=>{
                return(
                 
                   <th key={key} className={styles.TableHeader} >
@@ -298,16 +301,16 @@ const confirmDelete=async()=>{
               k++;
               return(
               <tr key={k} className={styles.TableRow} >
-                {Object.entries(element).filter(([key,val])=>{return key!=='id' }).map(([key,val])=>{
+                {Object.entries(element).filter(([key,val])=>{return key!=='id' && key !=='img' }).map(([key,val])=>{
          
                  return(<td className={styles.DataCell} key={key} >
                   {val}
                  </td> );
                 })}
                 { (editAccess || deleteAccess) && <td className={styles.DataCellFlex}>
-                  {editAccess &&   <div onClick={()=>{nav('/editGood/'+element.id,{state:element})}} className={styles.Yellow}>         <FontAwesomeIcon   icon={faEdit}></FontAwesomeIcon></div>   }
-                  {deleteAccess &&   <div className={styles.Red}  onClick={()=>setPopUpAndIid(element.id)} >         <FontAwesomeIcon   icon={faTrash}></FontAwesomeIcon></div>   }
-
+                  {editAccess &&   <div style={{marginInline:'3%'}} onClick={()=>{nav('/editGood/'+element.id,{state:element})}} className={styles.Yellow}>         <FontAwesomeIcon   icon={faEdit}></FontAwesomeIcon></div>   }
+                  {deleteAccess &&   <div style={{marginInline:'3%'}} className={styles.Red}  onClick={()=>setPopUpAndIid(element.id)} >         <FontAwesomeIcon   icon={faTrash}></FontAwesomeIcon></div>   }
+                  {<div style={{marginInline:'3%'}} className={styles.Green}  onClick={()=>{console.log(element.img);setPopUpImg(true);setImg(element.img)}} >         <FontAwesomeIcon   icon={faCamera}></FontAwesomeIcon></div>   }
                 </td>}
               </tr>);
              }) 
